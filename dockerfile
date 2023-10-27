@@ -1,21 +1,20 @@
+# Use an official Node.js runtime as a parent image
+FROM node:14
 
-# Use the official Node.js 10 image.
-# https://hub.docker.com/_/node
-FROM node:10
-
-# Create and change to the app directory.
+# Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Copy application dependency manifests to the container image.
-# A wildcard is used to ensure both package.json AND package-lock.json are copied.
-# Copying this separately prevents re-running npm install on every code change.
-COPY package.json package*.json ./
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
 
-# Install production dependencies.
-RUN npm install --only=production
+# Install app dependencies
+RUN npm install
 
-# Copy local code to the container image.
+# Copy the current directory contents into the container at /usr/src/app
 COPY . .
 
-# Run the web service on container startup.
-CMD [ "npm", "start" ]
+# Expose the port on which the app will run
+EXPOSE 3000
+
+# Define the command to run your app
+CMD ["node", "app.js"]
