@@ -13,7 +13,7 @@ steps:
       '-Dsonar.projectKey=cleanmoutain_cleane \',
       '-Dsonar.sources=. \',
       '-Dsonar.host.url=https://sonarcloud.io',
-      '-Dsonar.login=$_SONAR_TOKEN',
+      '-Dsonar.login=${_SONAR_TOKEN}',
     ]
     id: SAST Scan using SonarCloud in GCP DevSecOps Pipeline
 
