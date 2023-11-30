@@ -1,6 +1,6 @@
 steps:
   # Run SonarCloud analysis
-  - name: 'gcr.io/sonarqube-scan'
+  - name: 'gcr.io/sonarqube-community/sonar-scanner'
     entrypoint: 'sonar-scanner'
   
     args: [
