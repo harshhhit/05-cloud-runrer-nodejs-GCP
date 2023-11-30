@@ -1,6 +1,11 @@
 steps:
+   # Install Node.js
+  - name: 'node:14'
+    entrypoint: npm
+    args: ['install']
+
   # Run SonarCloud analysis
-  - name: 'gcr.io/sonarqube-community/sonar-scanner'
+  - name: 'gcr.io/sonarqube-scan'
     entrypoint: 'sonar-scanner'
   
     args: [
