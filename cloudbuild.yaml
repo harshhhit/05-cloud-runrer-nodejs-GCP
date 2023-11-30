@@ -1,14 +1,16 @@
 steps:
   # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/your-app-name', '.']
+    args: ['build', '-t', 'gcr.io/clean-mountain-395906/cloudsonarscner', '.']
 
   # Push the Docker image to Google Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/your-app-name']
+    args: ['push', 'gcr.io/clean-mountain-395906/cloudsonarscner']
 
   # Run SonarCloud analysis
   - name: 'gcr.io/sonarqube-scan'
+    entrypoint: 'sonar-scanner'
+  
     args: [
       '-Dsonar.organization=cleanmoutain \ ',
       '-Dsonar.projectKey=cleanmoutain_cleane \',
@@ -16,3 +18,6 @@ steps:
       '-Dsonar.host.url=https://sonarcloud.io',
       '-Dsonar.login=$_SONAR_TOKEN',
     ]
+
+images:
+- 'gcr.io/clean-mountain-395906/cloudsonarscner'
