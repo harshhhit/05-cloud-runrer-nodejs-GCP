@@ -1,8 +1,8 @@
 steps:
   
    # Install Node.js
-  - name: "node:18"
-    entrypoint: npm
+  - name: "gcr.io/cloud-builders/npm"
+    # entrypoint: npm
     args: 
       - "install -g sonarqube-scanner"
       # - '-Dsonar.organization=cleanmoutain'
