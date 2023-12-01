@@ -3,9 +3,9 @@ steps:
    # Install Node.js
   - name: "gcr.io/cloud-builders/npm"
     # entrypoint: npm
-    args: [
+    args: 
       - install -g sonarqube-scanner
-      - -v]
+      - -v
       # - '-Dsonar.organization=cleanmoutain'
       # - '-Dsonar.projectKey=cleanmoutain_cleane'
       # - '-Dsonar.login=aaa7bd5a26f1c16bf3aaa7113fe9270ac2b3fa40'
