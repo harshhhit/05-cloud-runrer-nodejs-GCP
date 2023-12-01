@@ -3,7 +3,10 @@ steps:
    # Install Node.js
   - name: 'node:14'
     entrypoint: npm
-    args: ['install',npm --version]
+    args: [
+      - npm --version
+      - npm install -g sonarqube-scanner
+      ]
   
 
 
