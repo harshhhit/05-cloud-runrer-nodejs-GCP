@@ -6,7 +6,7 @@ steps:
 
   # Run SonarCloud analysis
   - name: 'ubuntu'
-    entrypoint: 'sonar-scanner'
+    entrypoint: 'bash'
   
     args: [
       '-Dsonar.organization=cleanmoutain \ ',
