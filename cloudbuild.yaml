@@ -3,7 +3,7 @@ steps:
    # Install Node.js
   - name: 'node:14'
     entrypoint: npm
-    args: ['install']
+    args: ['install'npm install -g sonarqube-scanner','verify', 'sonar:sonar','-Dsonar.host.url=https://sonarcloud.io','-Dsonar.organization=cleanmoutain','-Dsonar.projectKey=cleanmoutain_cleane','-Dsonar.login=${_SONAR_TOKEN}']
   
 
 
@@ -15,11 +15,11 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/clean-mountain-395906/cloudsonarscner']
 
-  - name: 'ubuntu'
-    entrypoint: 'bash'
-    args: ['npm --version']
-    #args: ['verify', 'sonar:sonar','-Dsonar.host.url=https://sonarcloud.io','-Dsonar.organization=cleanmoutain','-Dsonar.projectKey=cleanmoutain_cleane','-Dsonar.login=${_SONAR_TOKEN}']
-    id: SAST Scan using SonarCloud in GCP DevSecOps Pipeline
+  # - name: 'ubuntu'
+  #   entrypoint: 'bash'
+  #   args: ['npm --version']
+  #   #args: ['verify', 'sonar:sonar','-Dsonar.host.url=https://sonarcloud.io','-Dsonar.organization=cleanmoutain','-Dsonar.projectKey=cleanmoutain_cleane','-Dsonar.login=${_SONAR_TOKEN}']
+  #   id: SAST Scan using SonarCloud in GCP DevSecOps Pipeline
 
 images:
 - 'gcr.io/clean-mountain-395906/cloudsonarscner'
