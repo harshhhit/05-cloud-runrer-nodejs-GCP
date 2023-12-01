@@ -4,7 +4,7 @@ steps:
   - name: "node:18"
     entrypoint: npm
     args: 
-      - install -g sonarqube-scanner
+      - npm install -g sonarqube-scanner
       # - '-Dsonar.organization=cleanmoutain'
       # - '-Dsonar.projectKey=cleanmoutain_cleane'
       # - '-Dsonar.login=aaa7bd5a26f1c16bf3aaa7113fe9270ac2b3fa40'
