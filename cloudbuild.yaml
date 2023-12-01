@@ -3,7 +3,7 @@ steps:
    # Install Node.js
   - name: 'node:14'
     entrypoint: npm
-    args: ['install',nmp -version]
+    args: ['install',npm --version]
   
 
 
