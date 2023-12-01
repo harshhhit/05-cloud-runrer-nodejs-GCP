@@ -1,8 +1,20 @@
 steps:
    # Install Node.js
-  - name: 'gcr.io/cloud-builders/ubuntu'
+  - name: 'node:14'
     entrypoint: npm
-    args: ['']
+    args: ['install']
+
+  # Run SonarCloud analysis
+  - name: 'ubuntu'
+    entrypoint: 'sonar-scanner'
+  
+    args: [
+      '-Dsonar.organization=cleanmoutain \ ',
+      '-Dsonar.projectKey=cleanmoutain_cleane \',
+      '-Dsonar.sources=. \',
+      '-Dsonar.host.url=https://sonarcloud.io',
+      '-Dsonar.login=$_SONAR_TOKEN',
+    ]
 
 
   # Build the Docker image
@@ -13,8 +25,8 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/clean-mountain-395906/cloudsonarscner']
 
-  - name: 'ubuntu'
-    entrypoint:'bash'
-    args: ['verify', 'sonar:sonar','-Dsonar.host.url=https://sonarcloud.io','-Dsonar.organization=cleanmoutain','-Dsonar.projectKey=cleanmoutain_cleane','-Dsonar.login=${_SONAR_TOKEN}']
-    id: SAST Scan using SonarCloud in GCP DevSecOps Pipeline
+
+images:
+- 'gcr.io/clean-mountain-395906/cloudsonarscner'
+
 
