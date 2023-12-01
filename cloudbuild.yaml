@@ -4,7 +4,7 @@ steps:
   - name: "gcr.io/cloud-builders/npm"
     # entrypoint: npm
     args: 
-      - install -g sonarqube-scanner
+      - "install -g sonarqube-scanner"
       # - sonar-scanner -Dsonar.projectKey=cleanmoutain_cleane -Dsonar.organization=cleanmoutain -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=aaa7bd5a26f1c16bf3aaa7113fe9270ac2b3fa40
       # - '-Dsonar.organization=cleanmoutain'
       # - '-Dsonar.projectKey=cleanmoutain_cleane'
