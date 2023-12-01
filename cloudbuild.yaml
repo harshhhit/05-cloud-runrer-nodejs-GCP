@@ -1,7 +1,7 @@
 steps:
   
    # Install Node.js
-  - name: "gcr.io/cloud-builders/sonar-scanner:latest"
+  - name: "gcr.io/clean-mountain-395906/sonar-scanner:latest"
     entrypoint: npm
     args: 
       - '-Dsonar.host.url=https://sonarcloud.io'
