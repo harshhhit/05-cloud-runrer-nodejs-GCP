@@ -8,7 +8,7 @@ steps:
     - '-Dsonar.projectKey=my-first-sacn_gcp'
     - '-Dsonar.organization=my-first-sacn'
     - '-Dsonar.sources=.'
-    - '- apt-install curl jq'
+    - '-apt install curl jq'
     
 
       
