@@ -2,6 +2,7 @@ steps:
   - name: 'ubuntu:20.04'
     entrypoint: bash
     args:
+      - node --version
       - apt-get install nodejs
       - apt-get install npm
       - npm install snyk@latest -g
