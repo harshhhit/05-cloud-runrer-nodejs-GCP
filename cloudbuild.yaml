@@ -1,8 +1,12 @@
 steps:
-  - name: 'ubuntu:20.04'
+  - name: 'gcr.io/clean-mountain-395906/ubuntu:20.04'
     entrypoint: bash
     args:
-      - node --version
-      - apt-get install nodejs
-      - apt-get install npm
-      - npm install snyk@latest -g
+      - '-c'
+      - |
+        << 'EOF'
+          apt-get update
+          apt-get install -y nodejs npm
+          npm install snyk@latest -g
+            EOF
+
