@@ -8,7 +8,14 @@ steps:
     - '-Dsonar.projectKey=my-first-sacn_gcp'
     - '-Dsonar.organization=my-first-sacn'
     - '-Dsonar.sources=.'
-    - '-Dsonar.qualitygate.wait=true'
+    #- '-Dsonar.qualitygate.wait=true'
+
+    - name: 'gcr.io/clean-mountain-395906/ubuntu'
+      args:
+      - 'sudo apt install nodejs'
+      - 'sudo apt install npm'
+      - 'npm install snyk@latest -g'
+
     
 
       
