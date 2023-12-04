@@ -8,15 +8,12 @@ steps:
     - '-Dsonar.projectKey=my-first-sacn_gcp'
     - '-Dsonar.organization=my-first-sacn'
     - '-Dsonar.sources=.'
+    - 'apt-install curl jq'
+    - 'Quality_status =$(curl -s -u dc9b9bae3665ce05dc57001fff13ca3a0c26be5d: https://sonarcloud.io/api/qualitygates/project_status?projectKey=my-first-sacn_gcp | jq -r '.projectStatus.status')'
+    - 'echo "SonarCloud analysis status is Squality status": if [ Squality status "ERROR" ]]; then exit 1;fi'
 
     
 
-  - name: 'gcr.io/clean-mountain-395906/sonar-scanner'
-    args:
-    - 'apt-install curl jq'
-    - 'Quality_status =$(curl -s -u dc9b9bae3665ce05dc57001fff13ca3a0c26be5d: https://sonarcloud.io/api/qualitygates/project_status?projectKey=my-first-sacn_gcp | jq -r '.projectStatus.status' )''
-    - 'echo "sonar-cloud analysisstatus is $quality_status"'
-    - 'echo "SonarCloud analysis status is Squality status": if [ Squality status "ERROR" ]]; then exit 1;fi '
       
   
 
