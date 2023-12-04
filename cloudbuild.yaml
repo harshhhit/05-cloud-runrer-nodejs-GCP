@@ -1,5 +1,5 @@
 steps:
-  - name: 'gcr.io/clean-mountain-395906/ubuntu:20.04'
+  - name: 'ubuntu:20.04'
     entrypoint: bash
     args:
       - sudo apt install nodejs
