@@ -8,7 +8,7 @@ steps:
     - '-Dsonar.projectKey=my-first-sacn_gcp'
     - '-Dsonar.organization=my-first-sacn'
     - '-Dsonar.sources=.'
-    - 'sonar.qualitygate.wait=true'
+    - '-Dsonar.qualitygate.wait=true'
     
 
       
