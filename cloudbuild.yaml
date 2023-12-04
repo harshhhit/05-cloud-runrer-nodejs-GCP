@@ -1,18 +1,6 @@
 steps:
-  - name: 'gcr.io/clean-mountain-395906/ubuntu::20.04'
+  - name: 'gcr.io/clean-mountain-395906/ubuntu:20.04'
     args:
-    - 'sudo apt install nodejs'
-    - 'sudo apt install npm'
-    - 'npm install snyk@latest -g'
-
-      
-  # - name: 'gcr.io/clean-mountain-395906/sonar-scanner'
-  #   args:
-  #   - '-Dsonar.host.url=https://sonarcloud.io'
-  #   - '-Dsonar.login=dc9b9bae3665ce05dc57001fff13ca3a0c26be5d'
-  #   - '-Dsonar.projectKey=my-first-sacn_gcp'
-  #   - '-Dsonar.organization=my-first-sacn'
-  #   - '-Dsonar.sources=.'
-  #   #- '-Dsonar.qualitygate.wait=true'
-  
-
+    - apt-get install nodejs
+    - apt-get install npm
+    - npm install snyk@latest -g
