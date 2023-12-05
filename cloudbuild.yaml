@@ -1,12 +1,8 @@
-steps:
-  - name: 'ubuntu:20.04'
-    entrypoint: bash
-    args:
-      - '-c'
-      - |
-        apt-get update
-        apt-get install -y nodejs npm
-        npm install snyk@latest -g
+ steps:
+ - name: 'node'
+   entrypoint: 'npm'
+   args: ['install' 'snyk@latest ' '-g']
+
 
             
 
