@@ -1,7 +1,10 @@
  steps:
  - name: 'node'
    entrypoint: 'npm'
-   args: ['install' 'snyk@latest ' '-g']
+     args:
+      - '-c'
+      - |
+        npm install snyk@latest -g
 
 
             
