@@ -2,6 +2,7 @@
     - name: node
       entrypoint: npm
       args:
+        - 'install'
         - '-c'
         - |
           npm install snyk@latest -g -y
