@@ -3,7 +3,7 @@
       entrypoint: npm
       args:
         - 'install'
-        - '-c'
+        - '-v'
         - |
          # npm install snyk@latest -g -y
 
