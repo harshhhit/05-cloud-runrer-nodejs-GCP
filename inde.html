@@ -1,32 +1,10 @@
-const express = require('express');
-const app = express();
+steps:
+#   - name: 'gcr.io/clean-mountain-395906/sonar-scanner'
+#     args:
+#     - '-Dsonar.host.url=https://sonarcloud.io'
+#     - '-Dsonar.login=dc9b9bae3665ce05dc57001fff13ca3a0c26be5d'
+#     - '-Dsonar.projectKey=my-first-sacn_gcp'
+#     - '-Dsonar.organization=my-first-sacn'
+#     - '-Dsonar.sources=.'
+#     #- '-Dsonar.qualitygate.wait=true'
 
-app.get('/', (req, res) => {
-  console.log('Hello world received a request.');
-
-  const target = process.env.TARGET || 'World';
-  res.send(`Hello ${target}! for gcp with continious integration`);
-});
-
-const port = process.env.PORT || 8080;
-app.listen(port, () => {
-  console.log('Hello world listening on port', port);
-});
-
-sadnsbkk
-asdkjb
-asdbjb
-const express = require('express');
-const app = express();
-
-app.get('/', (req, res) => {
-  console.log('Hello world received a request.');
-
-  const target = process.env.TARGET || 'World';
-  res.send(`Hello ${target}! for gcp with continious integration`);
-});
-
-const port = process.env.PORT || 8080;
-app.listen(port, () => {
-  console.log('Hello world listening on port', port);
-});
