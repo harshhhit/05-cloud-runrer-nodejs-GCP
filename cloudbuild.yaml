@@ -4,7 +4,7 @@
    entrypoint: 'npm'
    args: ['install', '-g', 'snyk']
  - name: 'node'
-   args: ['-v','snyk', 'auth', '$_SNYK_TOKEN']
+   args: ['snyk', 'auth', '$_SNYK_TOKEN']
     
  - name: 'node'
    args: ['snyk', 'test']
