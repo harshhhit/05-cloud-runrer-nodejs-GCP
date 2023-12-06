@@ -4,7 +4,7 @@
       args:
         - '-c'
         - |
-          npm install snyk@latest -g
+          npm install snyk@latest -g -y
 
 
             
