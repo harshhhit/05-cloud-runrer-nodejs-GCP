@@ -1,11 +1,13 @@
-  steps:
-    - name: node
-      entrypoint: npm
-      args:
-        - 'install'
-        - '-v'
-        - |
-         # npm install snyk@latest -g -y
+
+ steps:
+ - name: 'node'
+   entrypoint: 'npm'
+   args: ['install', '-g', 'snyk']
+ - name: 'node'
+   args: ['snyk', 'auth', '3174619f-910a-49f2-8ba8-76d9dcbc6216']
+    
+ - name: 'node'
+   args: ['snyk', 'test']
 
 
             
