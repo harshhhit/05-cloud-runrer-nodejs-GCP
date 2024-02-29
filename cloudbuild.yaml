@@ -1,29 +1,13 @@
 steps:
-- name: 'docker-build'
-    entrypoint: 'docker'
-    args: ['build', '-t', 'gcr.io/clean-mountain-395906/nodejsimage-1', '.']
-
-  - name: 'gcloud-deploy'
-    entrypoint: 'gcloud'
-    args: ['run', 'deploy', 'nodejs-servertest', '--image', 'gcr.io/clean-mountain-395906/nodejsimage-1', '--region', 'us-central1']
-
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/clean-mountain-395906/nodejproject', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/clean-mountain-395906/nodejproject]
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'testservice-1', '--nodejproject, 'gcr.io/clean-mountain-395906/nodejproject, '--region', 'us-central1']
 images:
-  - name: 'gcr.io/clean-mountain-395906/nodejsimage-1'
-
-- gcr.io/clean-mountain-395906/IMAGE
-    
- # steps:
- # - name: 'node'
- #   entrypoint: 'npm'
- #   args: ['install', '-g', 'snyk']
- # - name: 'node'
- #   args: ['snyk', 'auth', '$_SNYK_TOKEN']
-    
- # - name: 'node'
- #   args: ['snyk', 'test']
-
-
-            
-
-  
-
+- gcr.io/clean-mountain-395906/nodejproject
