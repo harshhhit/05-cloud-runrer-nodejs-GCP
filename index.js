@@ -5,7 +5,7 @@ app.get('/', (req, res) => {
   console.log('Hello world received a request.');
 
   const target = process.env.TARGET || 'World';
-  res.send(`Hello ${target}! for gcp with continious integration-222222`);
+  res.send(`Hello ${target}! for gcp with continious integration`);
 });
 
 const port = process.env.PORT || 8080;
