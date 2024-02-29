@@ -8,6 +8,6 @@ steps:
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'testservice-1', '--nodejproject, 'gcr.io/clean-mountain-395906/nodejproject, '--region', 'us-central1']
+  args: ['run', 'deploy', 'testservice-1', '--nodejproject, 'gcr.io/clean-mountain-395906/nodejproject:latest, '--region', 'us-central1']
 images:
 - gcr.io/clean-mountain-395906/nodejproject
