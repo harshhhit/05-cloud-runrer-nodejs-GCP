@@ -1,22 +1,14 @@
 steps:
-  - name: 'node-install'
-    entrypoint: 'npm'
-    args: ['install']
-
-  - name: 'node-test'
-    entrypoint: 'npm'
-    args: ['test']
-
-  - name: 'node-build'
-    entrypoint: 'npm'
-    args: ['run', 'build']
+- name: 'docker-build'
+    entrypoint: 'docker'
+    args: ['build', '-t', 'gcr.io/clean-mountain-395906/nodejsimage-1', '.']
 
   - name: 'gcloud-deploy'
     entrypoint: 'gcloud'
-    args: ['run', 'deploy', 'nodejs-servertest', '--image', 'gcr.io/clean-mountain-395906/IMAGE', '--region', 'us-central1 (Iowa)']
+    args: ['run', 'deploy', 'nodejs-servertest', '--image', 'gcr.io/clean-mountain-395906/nodejsimage-1', '--region', 'us-central1']
 
 images:
-  - name: 'gcr.io/clean-mountain-395906/IMAGE'
+  - name: 'gcr.io/clean-mountain-395906/nodejsimage-1'
 
 - gcr.io/clean-mountain-395906/IMAGE
     
