@@ -1,13 +1,22 @@
-
  steps:
  - name: 'node'
-   entrypoint: 'npm'
-   args: ['install', '-g', 'snyk']
+    entrypoint: 'npm'
+    args: ['install']
  - name: 'node'
-   args: ['snyk', 'auth', '$_SNYK_TOKEN']
+    entrypoint: 'npm'
+    args: ['test']
+ - name: 'node'
+    entrypoint: 'npm'
+    args: ['run', 'build']
+ # steps:
+ # - name: 'node'
+ #   entrypoint: 'npm'
+ #   args: ['install', '-g', 'snyk']
+ # - name: 'node'
+ #   args: ['snyk', 'auth', '$_SNYK_TOKEN']
     
- - name: 'node'
-   args: ['snyk', 'test']
+ # - name: 'node'
+ #   args: ['snyk', 'test']
 
 
             
